@@ -15,6 +15,13 @@ const books = [
   { name: 'Me Before You', genre: 'Romance', id: '3' },
 ];
 
+// dummy data:
+const authors = [
+  { name: 'Someone really old and wise', age: 100, id: '1' },
+  { name: 'A computer genious', age: 25, id: '2' },
+  { name: 'Jojo Moyes', age: 39, id: '3' },
+];
+
 const BookType = new GraphQLObjectType({
   name: "Book",
   fields: () => ({
