@@ -6,6 +6,7 @@ const {
   GraphQLString,
   GraphQLSchema,
   GraphQLID,
+  GraphQLInt,
 } = graphql;
 
 // dummy data:
@@ -31,6 +32,15 @@ const BookType = new GraphQLObjectType({
   }),
 });
 
+const AuthorType = new GraphQLObjectType({
+  name: "Author",
+  fields: () => ({
+    id: { type: GraphQLID },
+    name: { type: GraphQLString },
+    age: { type: GraphQLInt },
+  }),
+});
+
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
@@ -40,6 +50,14 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         // code to get data from db/other source
         return _.find(books, { id: args.id });
+      },
+    },
+    author: {
+      type: AuthorType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        // code to get data from db/other source
+        return _.find(authors, { id: args.id });
       },
     },
   },
