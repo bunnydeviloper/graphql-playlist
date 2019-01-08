@@ -6,6 +6,7 @@ const {
   GraphQLString,
   GraphQLSchema,
   GraphQLID,
+  GraphQLList,
   GraphQLInt,
 } = graphql;
 
@@ -48,6 +49,13 @@ const AuthorType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     age: { type: GraphQLInt },
+    books: {
+      type: new GraphQLList(BookType),
+      resolve(parent, args) {
+        return _.filter(books, { authorid: parent.id });
+        // use .filter instead of .find b/c result is an array of multiple items
+      },
+    },
   }),
 });
 
