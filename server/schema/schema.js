@@ -14,6 +14,9 @@ const books = [
   { name: 'Gone with the wind', genre: 'Fiction', id: '1', authorid: '1' },
   { name: 'Computer Programming 101', genre: 'Academic', id: '2', authorid: '2' },
   { name: 'Me Before You', genre: 'Romance', id: '3', authorid: '3' },
+  { name: 'Algorithm and Data Structures', genre: 'Academic', id: '4', authorid: '2' },
+  { name: 'After You', genre: 'Romance', id: '5', authorid: '3' },
+  { name: 'Paris For One', genre: 'Romance', id: '6', authorid: '3' },
 ];
 
 // dummy data:
