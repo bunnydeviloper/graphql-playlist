@@ -14,4 +14,12 @@ class BookDetails extends Component {
   }
 }
 
-export default graphql(getBookQuery)(BookDetails);
+export default graphql(getBookQuery, {
+  options: (props) => {
+    return {
+      variables: {
+        id: props.bookId,
+      },
+    };
+  },
+})(BookDetails);
