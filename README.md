@@ -1,4 +1,10 @@
 # graphql-playlist
 All course files for the GraphQL tutorial playlist on The Net Ninja YouTube channel.
 
-Node modules are not included in the course files. After download, run npm install to install the modules (client and server folders)
+### How to start application
+* `npm install` for both client and server folder
+* Server: `npm i nodemon', then start the server with `nodemon app.js`
+* Client: `npm start`
+
+### Screenshot
+<img src='./client/bookshelf-with-graphql-mongodb.png' width="400px" />
